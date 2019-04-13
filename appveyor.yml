@@ -1,0 +1,23 @@
+version: '{branch} #{build}'
+image: Visual Studio 2017
+platform: x64
+configuration: Release
+
+environment:
+  matrix:
+    - nodejs_version: "10"
+
+install:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - where cl
+  - ps: Install-Product node $env:nodejs_version x64
+  - node --version
+  - npm --version
+
+build:
+  - cd windows
+  - build.bat
+
+artifacts:
+  - path: windows\dcraw.exe
+    name: dcraw
