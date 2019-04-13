@@ -15,8 +15,9 @@ install:
   - npm --version
 
 build_script:
-  - cd windows
-  - build.bat
+  - npm ci
+  - npm run compile
+  - npm test
 
 artifacts:
   - path: windows\dcraw.exe
