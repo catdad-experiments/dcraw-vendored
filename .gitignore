@@ -37,6 +37,7 @@ node_modules/
 coverage/
 .nyc_output/
 temp/
+dist/
 
 windows/dcraw*
 linux/dcraw
