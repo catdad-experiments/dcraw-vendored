@@ -1,0 +1,14 @@
+os:
+  - linux
+  - osx
+
+language: node_js
+
+node_js:
+  - '10'
+
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then cd macos; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd linux; fi
+  - ./build.sh
+  - ls
