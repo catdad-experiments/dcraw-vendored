@@ -36,3 +36,7 @@ Temporary Items
 node_modules/
 coverage/
 .nyc_output/
+
+windows/dcraw*
+linux/dcraw
+macos/dcraw
