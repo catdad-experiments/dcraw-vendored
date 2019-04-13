@@ -1,0 +1,32 @@
+{
+  "name": "dcraw-vendored",
+  "version": "9.28.0",
+  "description": "dcraw-vendored",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "run-script-os",
+    "compile:linux": "cd linux && ./build.sh",
+    "compile:darwin": "cd macos && ./build.sh",
+    "compile:win32": "cd windows && build.bat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catdad-experiments/dcraw-vendored.git"
+  },
+  "author": "Kiril Vatev <vatev.1@gmail.com>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/catdad-experiments/dcraw-vendored/issues"
+  },
+  "homepage": "https://github.com/catdad-experiments/dcraw-vendored#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "fs-extra": "^7.0.1",
+    "mocha": "^6.1.3",
+    "node-fetch": "^2.3.0",
+    "rootrequire": "^1.0.0",
+    "run-script-os": "^1.0.5"
+  }
+}
