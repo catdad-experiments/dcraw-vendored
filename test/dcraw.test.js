@@ -11,11 +11,14 @@ const fetch = require('node-fetch');
 const root = require('rootrequire');
 const { expect } = require('chai');
 
-const bin = process.platform === 'win32'?
-  path.resolve(root, 'windows/dcraw.exe') :
-  process.platform === 'darwin' ?
-    path.resolve(root, 'macos/dcraw') :
-    path.resolve(root, 'linux/dcraw');
+const bin = process.env.PKG_TEST ? require(path.resolve(root, 'dist')) :
+  process.platform === 'win32'?
+    path.resolve(root, 'windows/dcraw.exe') :
+    process.platform === 'darwin' ?
+      path.resolve(root, 'macos/dcraw') :
+      path.resolve(root, 'linux/dcraw');
+
+console.log(`testing using binary at ${bin}`);
 
 const fileroot = path.resolve(root, 'temp');
 const resolve = (name = '') => path.resolve(fileroot, name);

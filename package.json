@@ -9,7 +9,10 @@
     "compile": "run-script-os",
     "compile:linux": "cd linux && ./build.sh",
     "compile:darwin": "cd macos && ./build.sh",
-    "compile:win32": "cd windows && build.bat"
+    "compile:win32": "cd windows && build.bat",
+    "package": "node build.js",
+    "cibuild": "npm run -s compile $$ npm run -s package",
+    "citest": "cross-env PKG_TEST=1 npm test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
   "homepage": "https://github.com/catdad-experiments/dcraw-vendored#readme",
   "devDependencies": {
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "fs-extra": "^7.0.1",
     "mocha": "^6.1.3",

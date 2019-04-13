@@ -7,12 +7,12 @@ jobs:
       node_js: '10'
       script:
         - npm ci
-        - npm run compile
-        - npm test
+        - npm run cibuild
+        - npm run citest
     - name: darwin
       os: osx
       node_js: '10'
       script:
         - npm ci
-        - npm run compile
-        - npm test
+        - npm run cibuild
+        - npm run citest
