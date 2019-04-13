@@ -11,7 +11,7 @@
     "compile:darwin": "cd macos && ./build.sh",
     "compile:win32": "cd windows && build.bat",
     "package": "node build.js",
-    "cibuild": "npm run -s compile $$ npm run -s package",
+    "cibuild": "npm run -s compile && npm run -s package",
     "citest": "cross-env PKG_TEST=1 npm test"
   },
   "repository": {
