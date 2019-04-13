@@ -3,6 +3,7 @@
   "version": "9.28.0",
   "description": "dcraw-vendored",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "mocha --timeout 30000 \"test/**/*.test.js\"",
     "compile": "run-script-os",
