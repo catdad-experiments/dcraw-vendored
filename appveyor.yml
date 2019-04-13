@@ -14,7 +14,7 @@ install:
   - node --version
   - npm --version
 
-build:
+build_script:
   - cd windows
   - build.bat
 
