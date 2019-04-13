@@ -16,8 +16,9 @@ install:
 
 build_script:
   - npm ci
-  - npm run cibuild
-  - npm run citest
+  - npm run -s compile:win32
+  - npm run -s package
+  - npm run -s citest
 
 artifacts:
   - path: windows\dcraw.exe
