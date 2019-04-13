@@ -4,7 +4,7 @@
   "description": "dcraw-vendored",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 30000 \"test/**/*.test.js\"",
     "compile": "run-script-os",
     "compile:linux": "cd linux && ./build.sh",
     "compile:darwin": "cd macos && ./build.sh",
