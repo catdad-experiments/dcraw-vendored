@@ -10,6 +10,18 @@ jobs:
         - npm run -s compile:linux
         - npm run -s package
         - npm run -s citest
+      before_deploy:
+        - cd dist
+        - ls -la
+      deploy:
+        provider: npm
+        email: vatev.1+npm@gmail.com
+        skip_cleanup: true
+        api_key:
+          secure: jorKSJc0wePPb50gVC3eev9rf/XxSFPkfNFuEEkUXxWYY7oGOHoV8aScj9m3ojqeOnV0810K2IhC5b2OHNT1bo4Cbld3VZktSoYyL0d1v64GQ0w3PknDxv79ZbKMR0jxsnNMVOZu0qVuuSgw8Gc4VgdmhsujDHpy+iGoHWb8JKvslstW7VRFBhZkiiXAudQ6nUgj8XUpisK0Shx3CH7JnsY33Q6pv4fYXipiWUqWjDsEHEOAfaz9Me+gWXcZtMYurMUSItdTJWUReIKzoN8WCqx1miISRuNfDekHMKBNckAO/WxtzsleBx02uCF9XOl7RJTNz7kjLIRMnHY8YaFqWFbf5JkNq1kLMePNfiDkXKhqiaDRkWogr0XlWr4pzcpxk2mwQnJJZIJFDw5wEMX6NE7QkVbyYoHMFPBmZjZDp54CsJkXGQz7mqOSqBi6WlJ48oOea5lshzbRdpKfK+QOqodOmaBUim3I68FnC1RuDtp99YRNgukq9vWWAy5rj/mEG80xWzwBMp6c0yV+KIXxORmYUVUfXPYGHp7GZv3QWnazVvRe+5nxY4jRNrptQlG2bu03lIakEjd/CZJJWBGY2ZKbEdPLa0lBcUpAJVDZ4vSNpHlyTqIjeQkTow8lAsHRbTIYi/66ihu0aKaS8CkXOFWcTGp4s8Q/fzDX9UQ+hRM=
+        on:
+          tags: true
+          repo: catdad-experiments/dcraw-vendored
     - name: darwin
       os: osx
       node_js: '10'
@@ -18,3 +30,15 @@ jobs:
         - npm run -s compile:darwin
         - npm run -s package
         - npm run -s citest
+      before_deploy:
+        - cd dist
+        - ls -la
+      deploy:
+        provider: npm
+        email: vatev.1+npm@gmail.com
+        skip_cleanup: true
+        api_key:
+          secure: jorKSJc0wePPb50gVC3eev9rf/XxSFPkfNFuEEkUXxWYY7oGOHoV8aScj9m3ojqeOnV0810K2IhC5b2OHNT1bo4Cbld3VZktSoYyL0d1v64GQ0w3PknDxv79ZbKMR0jxsnNMVOZu0qVuuSgw8Gc4VgdmhsujDHpy+iGoHWb8JKvslstW7VRFBhZkiiXAudQ6nUgj8XUpisK0Shx3CH7JnsY33Q6pv4fYXipiWUqWjDsEHEOAfaz9Me+gWXcZtMYurMUSItdTJWUReIKzoN8WCqx1miISRuNfDekHMKBNckAO/WxtzsleBx02uCF9XOl7RJTNz7kjLIRMnHY8YaFqWFbf5JkNq1kLMePNfiDkXKhqiaDRkWogr0XlWr4pzcpxk2mwQnJJZIJFDw5wEMX6NE7QkVbyYoHMFPBmZjZDp54CsJkXGQz7mqOSqBi6WlJ48oOea5lshzbRdpKfK+QOqodOmaBUim3I68FnC1RuDtp99YRNgukq9vWWAy5rj/mEG80xWzwBMp6c0yV+KIXxORmYUVUfXPYGHp7GZv3QWnazVvRe+5nxY4jRNrptQlG2bu03lIakEjd/CZJJWBGY2ZKbEdPLa0lBcUpAJVDZ4vSNpHlyTqIjeQkTow8lAsHRbTIYi/66ihu0aKaS8CkXOFWcTGp4s8Q/fzDX9UQ+hRM=
+        on:
+          tags: true
+          repo: catdad-experiments/dcraw-vendored
