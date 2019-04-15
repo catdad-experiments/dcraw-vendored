@@ -27,11 +27,16 @@ artifacts:
     name: dcraw
 
 deploy_script:
-  - cd dist
-  - dir
-  - ps: '"//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII'
-  - npm whoami
-  - npm publish
-    on:
-      APPVEYOR_REPO_TAG: true
+  - ps: |
+    cd dist
+    dir
+
+    if ($ENV:APPVEYOR_REPO_TAG -eq "true")
+    {
+      "//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII
+      iex "npm whoami"
+      iex "npm publish"
+    }
+  on:
+    APPVEYOR_REPO_TAG: true
 
