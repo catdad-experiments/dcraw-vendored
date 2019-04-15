@@ -20,6 +20,7 @@ const file = name => path.resolve(dist, name);
   const pkg = require('./package.json');
   await fs.outputJson(file('package.json'), Object.assign({}, pkg, {
     name: `${pkg.name}-${process.platform}`,
+    main: 'index.js',
     private: undefined
   }), { spaces: 2 });
 
