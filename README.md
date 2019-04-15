@@ -40,3 +40,5 @@ All versions are compiled using `NODEPS`, so some functionality may not work. Pl
 ## License
 
 The original [`dcraw` code](https://www.cybercom.net/~dcoffin/dcraw/) by Dave Coffin is compiled without modifications. Regardless of modification, these modules are distributed under the GPL version 2 license, because that is what the header in the source code says and I do not want to get in trouble.
+
+To the extent possible under law, I am waiving all copyright and related or neighboring rights to the build scripts and build-related code in this repository.
