@@ -26,6 +26,7 @@ const file = name => path.resolve(dist, name);
 
   await fs.copy(bin, file(binname));
   await fs.copy('./README.md', file('README.md'));
+  await fs.copy('./src/dcraw.c', file('dcraw.c'));
 
   await fs.outputFile(file('index.js'), `
 module.exports = require('path').resolve(__dirname, process.platform === 'win32' ? 'dcraw.exe' : 'dcraw');
