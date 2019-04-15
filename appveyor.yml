@@ -6,6 +6,8 @@ configuration: Release
 environment:
   matrix:
     - nodejs_version: "10"
+  npm_auth_token:
+    secure: pBJzpHmM4Z+rgfqxGj63yLXIKLDc5AjV/bexQ/CjpUfKuoRML71pcYtS/CkqAxhn
 
 install:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
@@ -23,3 +25,13 @@ build_script:
 artifacts:
   - path: windows\dcraw.exe
     name: dcraw
+
+deploy_script:
+  - cd dist
+  - dir
+  - ps: '"//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII'
+  - npm whoami
+  - npm publish
+  on:
+    APPVEYOR_REPO_TAG: true
+
