@@ -45,9 +45,8 @@ promisify(execFile)(dcraw, ['-c', 'my-image.dng'], {
   windowsHide: true,
   // we want the raw data, not a string
   encoding: 'buffer',
-  // 8-bit images are roughly 3x bigger -- you can calculate an exact size
-  // based on the width and height of an image if you really want -- so you
-  // should set this number fairly high
+  // 8-bit PPMs are roughly 3x bigger than the original raw file
+  // so you should set this number fairly high
   maxBuffer: 1024 * 1024 * 100
 })
   .then(result => {
