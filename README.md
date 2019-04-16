@@ -35,10 +35,10 @@ promisify(execFile)(dcraw, ['-w', '-W'])
 
 The versions of these packages will follow the versions of `dcraw` itself. For example, version `9.28` of `dcraw` will be published as `9.28.x`, with path versions reflecting updates to the surrounding module (likely related to the build, as there isn't much to the module itself). However, I do not know how `dcraw` itself is versioned, so I recommend pinning this dependency just in case.
 
-All versions are compiled using `NODEPS`, so some functionality may not work. Please look at the original source code for imformation on what functionality dependencies provide. If you'd like to see any dependencies included, please feel free to submit a PR.
+All versions are compiled using `NODEPS`, so some functionality may not work. Please look at the original source code for information on what functionality is provided by dependencies. If you'd like to see any dependencies included, please feel free to submit a PR.
 
 ## License
 
-The original [`dcraw` code](https://www.cybercom.net/~dcoffin/dcraw/) by Dave Coffin is compiled without modifications. Regardless of modification, these modules are distributed under the GPL version 2 license, because that is what the header in the source code says and I do not want to get in trouble.
+The original [`dcraw` code by Dave Coffin](https://www.cybercom.net/~dcoffin/dcraw/) is compiled without modifications. Regardless of modification, these modules are distributed under the GPL version 2 license, because that is what the header in the source code says and I do not want to get in trouble.
 
 To the extent possible under law, I am waiving all copyright and related or neighboring rights to the build scripts and build-related code in this repository.
