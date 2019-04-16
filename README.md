@@ -52,7 +52,6 @@ promisify(execFile)(dcraw, ['-c', 'my-image.dng'], {
   .then(result => {
     // don't use the sync method... you get the idea though
     fs.writeFileSync('./my-image.ppm', result.stdout);
-
   }).catch(err => {
     console.error(err);
   });
