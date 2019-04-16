@@ -23,9 +23,37 @@ const { execFile } = require('child_process');
 
 // call dcraw with any command line arguments you want
 // bonus points: it's a promise now
-promisify(execFile)(dcraw, ['-w', '-W'])
+promisify(execFile)(dcraw, ['-w', '-W', 'my-image.dng'])
   .then(result => {
     console.log(result);
+  }).catch(err => {
+    console.error(err);
+  });
+```
+
+You might also want to get the image returned in standard out rather than written to a file. You can follow these general rules:
+
+```javascript
+const dcraw = require('dcraw-vendored-linux');
+const { promisify } = require('util');
+const { execFile } = require('child_process');
+const fs = require('fs');
+
+// -c will write the data to stdout
+promisify(execFile)(dcraw, ['-c', 'my-image.dng'], {
+  // hide the extra window on Windows
+  windowsHide: true,
+  // we want the raw data, not a string
+  encoding: 'buffer',
+  // 8-bit images are roughly 3x bigger -- you can calculate an exact size
+  // based on the width and height of an image if you really want -- so you
+  // should set this number fairly high
+  maxBuffer: 1024 * 1024 * 100
+})
+  .then(result => {
+    // don't use the sync method... you get the idea though
+    fs.writeFileSync('./my-image.ppm', result.stdout);
+
   }).catch(err => {
     console.error(err);
   });
