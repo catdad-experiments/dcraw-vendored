@@ -1,6 +1,6 @@
 {
   "name": "dcraw-vendored",
-  "version": "9.28.0",
+  "version": "9.28.1",
   "description": "precompiled ready to use dcraw binaries",
   "main": "index.js",
   "private": true,
