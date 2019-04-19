@@ -35,8 +35,8 @@ deploy_script:
       {
         echo "publishing to npm on a tagged build"
         "//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII
-        npm whoami 2>&1
-        npm publish 2>&1
+        cmd /c "npm whoami 2>&1"
+        cmd /c "npm publish 2>&1"
       } else {
         echo "skipping publishing due to lack of a tag"
       }
