@@ -21,7 +21,9 @@ const file = name => path.resolve(dist, name);
   await fs.outputJson(file('package.json'), Object.assign({}, pkg, {
     name: `${pkg.name}-${process.platform}`,
     main: 'index.js',
-    private: undefined
+    private: undefined,
+    os: [ process.platform ],
+    cpu: [ 'x64' ]
   }), { spaces: 2 });
 
   await fs.copy(bin, file(binname));
