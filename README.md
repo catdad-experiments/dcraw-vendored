@@ -14,6 +14,8 @@ This projects distributes the `dcraw` binary through a series of npm modules, in
 * Windows: [dcraw-vendored-win32](https://www.npmjs.com/package/dcraw-vendored-win32)
 * MacOS: [dcraw-vendored-darwin](https://www.npmjs.com/package/dcraw-vendored-darwin)
 
+If you don't want to think about operating systems, consider installing [dcrawr](https://www.npmjs.com/package/dcrawr) instead, which integrates these modules.
+
 All the modules can be in the following way:
 
 ```javascript
